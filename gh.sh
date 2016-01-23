@@ -42,5 +42,11 @@ then
     giturl="${giturl}/tree/${branch}"
 fi
 
-open $giturl
+if which xdg-open > /dev/null
+then
+    xdg-open $giturl
+else
+    open $giturl
+fi
+
 exit 0
